@@ -1,5 +1,4 @@
 # bootCAMP-TI
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -139,8 +138,7 @@ docker compose run --rm e2e</code></pre>
         <li>Pipeline no GitHub Actions</li>
       </ul>
     </section>
-  </main>
-  <footer>
+  </main>  <footer>
     <p>Guia técnico desenvolvido para automatização da Entrega II — Prof. Romes • Bootcamp CEUB</p>
   </footer>
 </body>
