@@ -52,3 +52,32 @@ jobs:
     name: extension-zip
     path: dist/extension.zip
 # ...
+name: CI # Sem indentação
+
+on: # Sem indentação
+  push: # Dois espaços de indentação
+    branches: [ main ] # Quatro espaços de indentação
+  pull_request: # Dois espaços de indentação
+    branches: [ main ] # Quatro espaços de indentação
+
+jobs: # Sem indentação
+  test-build: # Dois espaços de indentação
+    runs-on: ubuntu-latest # Quatro espaços de indentação
+    steps: # Quatro espaços de indentação
+      - uses: actions/checkout@v4 # Seis espaços de indentação
+      # ... (Outros passos, sempre alinhados com '- uses' ou '- name')
+
+      # Etapas CRUCIAIS para o Item 3 (Relatório):
+      - name: Testes E2E # Seis espaços
+        run: npm run test:e2e || npm run test:e2e -- --reporter=html # Oito espaços
+      - name: Publicar relatório do Playwright # Seis espaços
+        if: always() # Oito espaços
+        uses: actions/upload-artifact@v4 # Oito espaços
+        with: # Oito espaços
+          name: playwright-report # Dez espaços
+          path: playwright-report # Dez espaços
+      - name: Publicar pacote da extensão # Seis espaços
+        uses: actions/upload-artifact@v4 # Oito espaços
+        with: # Oito espaços
+          name: extension-zip # Dez espaços
+          path: dist/extension.zip # Dez espaços
